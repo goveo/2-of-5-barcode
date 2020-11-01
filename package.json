@@ -1,0 +1,34 @@
+{
+  "name": "2-of-5-barcode",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Yuriy Brusentsov <yuriybrusentsov@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node ./dist/index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goveo/2-of-5-barcode.git"
+  },
+  "engines": {
+    "node": "v12.16.1"
+  },
+  "bugs": {
+    "url": "https://github.com/goveo/2-of-5-barcode/issues"
+  },
+  "homepage": "https://github.com/goveo/2-of-5-barcode#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.6",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "eslint": "^7.12.1",
+    "jest": "^26.6.1",
+    "ts-jest": "^26.4.3",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {}
+}
