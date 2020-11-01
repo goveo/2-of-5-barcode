@@ -38,6 +38,7 @@ describe('Encoder should encode one symbol correct', () => {
         expect(() => Encoder.encodeSymbol(NaN)).toThrow();
         expect(() => Encoder.encodeSymbol('')).toThrow();
         expect(() => Encoder.encodeSymbol('11')).toThrow();
+        expect(() => Encoder.encodeSymbol('a')).toThrow();
         expect(() => Encoder.encodeSymbol('test')).toThrow();
     });
 });

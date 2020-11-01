@@ -27,6 +27,10 @@ export class Encoder {
             ? parseInt(symbol)
             : symbol;
 
+        if (isNaN(digit)) {
+            throw new Error('Allowed only digits');
+        }
+
         if (digit === 0) {
             return '00110';
         }
