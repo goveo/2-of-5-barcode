@@ -1,11 +1,5 @@
 export class Encoder {
     static encodeSymbol(symbol: string | number): string {
-        if (symbol === 'start') {
-            return '110';
-        }
-        if (symbol === 'stop') {
-            return '101';
-        }
         if (typeof symbol === 'string') {
             if (symbol.length > 1) {
                 throw new Error('Allow encoding only one char');
@@ -52,6 +46,10 @@ export class Encoder {
             ? result.push(1)
             : result.push(0);
         return result.join('');
+    }
+
+    static encodeString(str: string): string[] {
+        return str.split('').map((char) => Encoder.encodeSymbol(char));
     }
 }
 
