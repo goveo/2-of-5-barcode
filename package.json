@@ -1,34 +1,46 @@
 {
   "name": "2-of-5-barcode",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "author": "Yuriy Brusentsov <yuriybrusentsov@gmail.com>",
-  "main": "index.js",
+  "private": false,
   "scripts": {
-    "build": "tsc",
-    "start": "npm run build && node ./dist/index.js",
-    "test": "jest"
+    "test": "jest",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public --no-dll",
+    "build-storybook": "build-storybook -s public --no-dll"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/goveo/2-of-5-barcode.git"
   },
-  "engines": {
-    "node": "v12.16.1"
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.0"
   },
-  "bugs": {
-    "url": "https://github.com/goveo/2-of-5-barcode/issues"
-  },
-  "homepage": "https://github.com/goveo/2-of-5-barcode#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-knobs": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/node-logger": "^6.0.28",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^6.0.28",
     "@types/jest": "^26.0.15",
-    "@types/node": "^14.14.6",
-    "@typescript-eslint/eslint-plugin": "^4.6.0",
-    "@typescript-eslint/parser": "^4.6.0",
-    "eslint": "^7.12.1",
-    "jest": "^26.6.1",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "babel-loader": "^8.1.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-html": "^6.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.3",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "jest": "^26.6.2",
+    "prettier": "^2.1.2",
     "ts-jest": "^26.4.3",
     "typescript": "^4.0.5"
-  },
-  "dependencies": {}
+  }
 }

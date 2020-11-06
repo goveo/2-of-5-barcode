@@ -1,4 +1,8 @@
 export class Encoder {
+
+    static startSymbol = '110';
+    static endSymbol = '101';
+
     static encodeSymbol(symbol: string | number): string {
         if (typeof symbol === 'string') {
             if (symbol.length > 1) {
@@ -49,7 +53,13 @@ export class Encoder {
     }
 
     static encodeString(str: string): string[] {
+        if (str == null) return [];
         return str.split('').map((char) => Encoder.encodeSymbol(char));
+    }
+
+    static encodeNumber(num: number): string[] {
+        if (num == null) return [];
+        return num.toString().split('').map((char) => Encoder.encodeSymbol(char));
     }
 }
 
