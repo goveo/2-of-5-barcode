@@ -9,7 +9,7 @@ export default {
   component: Barcode,
 } as Meta;
 
-const Template: Story = () => <Barcode number={numberKnob('Encoding number', 12345)} />;
+const Template: Story = () => <Barcode number={numberKnob('Encoding number', 12345, { min: 0 }) || 0} />;
 
 export const Default = Template.bind({});
 Default.args = {};

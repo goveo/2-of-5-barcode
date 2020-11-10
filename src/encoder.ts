@@ -1,7 +1,7 @@
 export class Encoder {
 
     static startSymbol = '110';
-    static endSymbol = '101';
+    static endSymbol = '101'
 
     static encodeSymbol(symbol: string | number): string {
         if (typeof symbol === 'string') {

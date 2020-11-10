@@ -14,8 +14,6 @@ export interface DrawingOptions {
 }
 
 export const Barcode: React.FC<Props> = ({ number, height = 150, barWidth = 4 }) => {
-    if (!number || isNaN(number)) return null;
-
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [canvasContext, setCanvasContext] = useState<CanvasRenderingContext2D>();
 
@@ -71,7 +69,7 @@ export const Barcode: React.FC<Props> = ({ number, height = 150, barWidth = 4 })
             });
         }
         return x;
-    }, [drawBar]);
+    }, [drawBar, barWidth, canvasContext]);
 
     const drawBarcode = useCallback((code: string[]) => {
         let x = barWidth;
@@ -90,13 +88,14 @@ export const Barcode: React.FC<Props> = ({ number, height = 150, barWidth = 4 })
             setDrawingOptions({ width, height, lineWidth: barWidth });
             drawBarcode(Encoder.encodeNumber(number));
         }
-    }, [canvasContext, width, height]);
+    }, [canvasContext, width, height, barWidth, drawBarcode, number, setDrawingOptions]);
 
     useEffect(() => {
         clearCanvas();
         drawBarcode(Encoder.encodeNumber(number));
     }, [number, clearCanvas, drawBarcode]);
 
+    if (number == null || isNaN(number)) return null;
     return (
         <canvas ref={canvasRef}></canvas>
     );
