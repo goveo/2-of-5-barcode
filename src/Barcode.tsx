@@ -77,7 +77,7 @@ export const Barcode: React.FC<Props> = ({ number, height = 150, barWidth = 4 })
         code.forEach((digit) => {
             x = drawDigit(digit, x);
         });
-        x = drawDigit(Encoder.endSymbol, x);
+        x = drawDigit(Encoder.stopSymbol, x);
     }, [drawDigit, barWidth]);
 
     useEffect(() => {
